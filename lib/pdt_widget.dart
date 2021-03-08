@@ -222,22 +222,22 @@ var users = <User>[
       address: "obala",
       email: "laeticia@gmail.com",
       group: "melancholic"),
-  User(
-      name: "kelly",
-      phone: "654881545",
-      address: "stade",
-      email: "kelly@gmail.com",
-      group: "sanguin"),
-  User(
-      name: "Brady",
-      phone: "654881545",
-      address: "carrefour kameni",
-      email: "brady@gmail.com",
-      group: "sanguin"),
-  User(
-      name: "Arnold",
-      phone: "654881545",
-      address: "feu rouge",
-      email: "ary@gmail.com",
-      group: "choleric"),
+  // User(
+  //     name: "kelly",
+  //     phone: "654881545",
+  //     address: "stade",
+  //     email: "kelly@gmail.com",
+  //     group: "sanguin"),
+  // User(
+  //     name: "Brady",
+  //     phone: "654881545",
+  //     address: "carrefour kameni",
+  //     email: "brady@gmail.com",
+  //     group: "sanguin"),
+  // User(
+  //     name: "Arnold",
+  //     phone: "654881545",
+  //     address: "feu rouge",
+  //     email: "ary@gmail.com",
+  //     group: "choleric"),
 ];
