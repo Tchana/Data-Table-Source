@@ -12,7 +12,7 @@ class _Episode5State extends State<Episode5> {
   int _rowsPerPage = PaginatedDataTable.defaultRowsPerPage;
 
   Widget bodyData() => SingleChildScrollView(
-    child: PaginatedDataTable(
+        child: PaginatedDataTable(
           onSelectAll: (b) {},
           sortColumnIndex: 0,
           sortAscending: true,
@@ -58,63 +58,39 @@ class _Episode5State extends State<Episode5> {
               tooltip: "To display the actions",
             ),
           ],
-          // rows: users
-          //     .map(
-          //       (user) => DataRow(
-          //         cells: [
-          //           DataCell(
-          //             Text(user.name),
-          //             showEditIcon: false,
-          //             placeholder: false,
-          //           ),
-          //           DataCell(
-          //             Text(user.phone),
-          //             showEditIcon: false,
-          //             placeholder: false,
-          //           ),
-          //           DataCell(
-          //             Text(user.email),
-          //             showEditIcon: false,
-          //             placeholder: false,
-          //           ),
-          //           DataCell(
-          //             Text(user.group),
-          //             showEditIcon: false,
-          //             placeholder: false,
-          //           ),
-          //           DataCell(
-          //             Text(user.address),
-          //             showEditIcon: false,
-          //             placeholder: false,
-          //           ),
-          //           DataCell(
-          //             Icon(Icons.more_vert),
-          //             showEditIcon: false,
-          //             placeholder: false,
-          //           ),
-          //         ],
-          //       ),
-          //     )
-          //     .toList(),
-      source: dts,
-      onRowsPerPageChanged: (r){
+          source: dts,
+          onRowsPerPageChanged: (r) {
             setState(() {
               _rowsPerPage = r;
             });
-      },
-      rowsPerPage: _rowsPerPage,
+          },
+          rowsPerPage: _rowsPerPage,
         ),
-  );
+      );
 
+  _showPopupMenu() async {
+    await showMenu(
+      context: context,
+      position: RelativeRect.fromLTRB(100, 400, 100, 400),
+      items: [
+        PopupMenuItem(
+          child: Text("Group"),
+        ),
+        PopupMenuItem(
+          child: Text("Edit"),
+        ),
+        PopupMenuItem(
+          child: Text("Delete"),
+        ),
+      ],
+      elevation: 8.0,
+    );
+  }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Episode 5 - Data Table'),
-      ),
-      body: Container(
-        child: bodyData(),
-      ),
+    return Padding(
+      padding: EdgeInsets.all(20.0),
+      child: bodyData(),
     );
   }
 }
